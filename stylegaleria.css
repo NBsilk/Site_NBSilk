@@ -1,0 +1,155 @@
+/* CORES DO SITE */
+:root {
+  --orange: #ef7837;
+  --dark: #11110f;
+  --cream: #f5f2eb;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--dark);
+  color: var(--cream);
+  font-family: Arial, sans-serif;
+}
+
+/* BARRA DE NAVEGAÇÃO */
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 0 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--dark);
+}
+
+/* LOGOTIPO */
+.brand {
+  color: var(--orange);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* ÁREA DA GALERIA */
+.quadrado {
+  background: var(--orange);
+
+  width: 90%;
+  max-width: 1100px;
+  min-height: 500px;
+
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 12px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* IMAGENS DA GALERIA */
+.quadrado img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+/* LOGOTIPO */
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.brand small {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 4px;
+}
+
+/* TÍTULO DA GALERIA */
+.titulo {
+    text-align: center;
+    color: var(--cream);
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* IMAGENS */
+.quadrado img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.quadrado img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.quadrado img:hover {
+  transform: scale(1.05);
+}
+
+.brand span {
+    color: white;
+}
+
+.brand {
+    display: block;
+}
+
+.brand span {
+    color: white;
+}
+
+.brand small {
+    display: block;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .quadrado {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .quadrado {
+    grid-template-columns: 1fr;
+  }
+}
