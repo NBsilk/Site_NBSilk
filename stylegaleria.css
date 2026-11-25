@@ -148,47 +148,46 @@ main {
   }
 
   /* Cursor de ampliação */
-  .quadrado img {
+.quadrado img {
     cursor: zoom-in;
-  }
+}
 
-  /* Fundo da imagem expandida */
-  .lightbox {
+/* Janela de ampliação */
+#lightbox {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.95);
-    z-index: 9999;
-    align-items: center;
+    z-index: 99999;
     justify-content: center;
-  }
+    align-items: center;
+}
 
-  /* Formatação da imagem expandida */
-  .lightbox img {
+/* Imagem ampliada */
+#imagem-expandida {
+    width: auto;
+    height: auto;
     max-width: 90vw;
     max-height: 85vh;
     object-fit: contain;
-    border-radius: 12px;
-    border: 2px solid var(--orange);
-  }
+    border-radius: 10px;
+}
 
-  /* Botão de fechar */
-  #fechar {
+/* Botão de fechar */
+#fechar {
     position: absolute;
     top: 20px;
     right: 30px;
-    color: var(--orange);
+    color: white;
     font-size: 45px;
     background: transparent;
     border: none;
     cursor: pointer;
-  }
-
-  /* Animação de abertura */
-  .lightbox.ativo {
-    display: flex;
-    animation: aparecer 0.3s ease;
-  }
+    z-index: 100000;
+}
 
   @keyframes aparecer {
     from {
