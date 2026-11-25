@@ -1,38 +1,30 @@
-// Seleciona todas as imagens da galeria
 const imagens = document.querySelectorAll(".quadrado img");
-
-// Seleciona os elementos do Lightbox
 const lightbox = document.getElementById("lightbox");
 const imagemExpandida = document.getElementById("imagem-expandida");
 const fechar = document.getElementById("fechar");
 
-// Função para ampliar as imagens
+// Abre a imagem
 imagens.forEach(imagem => {
 
     imagem.addEventListener("click", () => {
 
         imagemExpandida.src = imagem.src;
         imagemExpandida.alt = imagem.alt;
+        lightbox.style.display = "flex";
 
-        lightbox.classList.add("ativo");
-
-        document.body.style.overflow = "hidden";
     });
 
 });
 
-// Função para fechar a imagem
+// Fecha a imagem
 function fecharImagem() {
-
-    lightbox.classList.remove("ativo");
-
-    document.body.style.overflow = "";
+    lightbox.style.display = "none";
 }
 
 // Fecha pelo botão X
 fechar.addEventListener("click", fecharImagem);
 
-// Fecha ao clicar fora da imagem
+// Fecha clicando no fundo
 lightbox.addEventListener("click", evento => {
 
     if (evento.target === lightbox) {
@@ -41,7 +33,7 @@ lightbox.addEventListener("click", evento => {
 
 });
 
-// Fecha ao pressionar ESC
+// Fecha pressionando ESC
 document.addEventListener("keydown", evento => {
 
     if (evento.key === "Escape") {
